@@ -1,0 +1,10 @@
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Redirect all requests to index.html except for existing files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Optional: Handle 404 errors by redirecting to index.html
+ErrorDocument 404 /index.html
